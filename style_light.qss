@@ -1,0 +1,214 @@
+* {
+    font-family: "Segoe UI Variable", "Segoe UI", "Vazirmatn", sans-serif;
+    color: #1e293b;
+}
+
+QMainWindow, QWidget#centralWidget {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+        stop:0 #f8fafc, stop:0.5 #f1f5f9, stop:1 #e2e8f0);
+}
+
+/* ---------- App header ---------- */
+QLabel[class="appTitle"] {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0f172a;
+}
+QLabel[class="appSubtitle"] {
+    font-size: 12px;
+    color: #64748b;
+}
+
+/* ---------- Theme toggle button ---------- */
+QPushButton#themeToggle {
+    background: #ffffff;
+    color: #0f172a;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 600;
+}
+QPushButton#themeToggle:hover {
+    background: #f8fafc;
+    border: 1px solid rgba(0, 0, 0, 0.22);
+}
+QPushButton#themeToggle:pressed {
+    background: #e2e8f0;
+}
+
+/* ---------- Cards ---------- */
+QFrame#card {
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 14px;
+}
+
+/* ---------- Status card ---------- */
+QFrame#statusCard {
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+QFrame#statusCard[state="blocked"] {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+        stop:0 rgba(239,68,68,0.12), stop:1 rgba(254,242,242,0.9));
+    border: 1px solid rgba(239,68,68,0.4);
+}
+QFrame#statusCard[state="protected"] {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+        stop:0 rgba(16,185,129,0.12), stop:1 rgba(240,253,244,0.9));
+    border: 1px solid rgba(16,185,129,0.4);
+}
+QFrame#statusCard[state="checking"] {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+        stop:0 rgba(245,158,11,0.12), stop:1 rgba(254,252,232,0.9));
+    border: 1px solid rgba(245,158,11,0.35);
+}
+
+QLabel[class="statusIcon"] {
+    font-size: 42px;
+    font-weight: 700;
+    min-width: 90px; min-height: 90px;
+    max-width: 90px; max-height: 90px;
+    border-radius: 45px;
+}
+QFrame#statusCard[state="blocked"]   QLabel[class="statusIcon"] {
+    color: #dc2626; background-color: rgba(239,68,68,0.14);
+}
+QFrame#statusCard[state="protected"] QLabel[class="statusIcon"] {
+    color: #059669; background-color: rgba(16,185,129,0.14);
+}
+QFrame#statusCard[state="checking"]  QLabel[class="statusIcon"] {
+    color: #d97706; background-color: rgba(245,158,11,0.14);
+}
+
+QLabel[class="statusTitle"] {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0f172a;
+}
+QLabel[class="statusSubtitle"] {
+    font-size: 13px;
+    color: #475569;
+}
+
+/* ---------- Card titles ---------- */
+QLabel[class="cardTitle"] {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0f172a;
+}
+QLabel[class="cardDesc"] {
+    font-size: 12px;
+    color: #64748b;
+}
+
+/* ---------- Stats ---------- */
+QLabel[class="statLabel"] {
+    font-size: 10px;
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 1px;
+}
+QLabel[class="statValue"] {
+    font-size: 16px;
+    font-weight: 600;
+    color: #0f172a;
+    font-family: "Cascadia Code", "Consolas", monospace;
+}
+
+/* ---------- DNS server rows ---------- */
+QLabel[class="srvName"] {
+    font-family: "Cascadia Code", "Consolas", monospace;
+    font-size: 12px;
+    color: #334155;
+}
+QLabel[class="srvStatus"] {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 10px;
+}
+QLabel[class="srvStatus"][state="ok"]   { color: #059669; background: rgba(16,185,129,0.14); }
+QLabel[class="srvStatus"][state="fail"] { color: #dc2626; background: rgba(239,68,68,0.14); }
+QLabel[class="srvStatus"][state="unknown"] { color: #64748b; background: rgba(100,116,139,0.12); }
+
+QLabel[class="dot"] {
+    color: #059669;
+    font-size: 9px;
+}
+
+/* ---------- Log ---------- */
+QTextEdit#logView {
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    font-family: "Cascadia Code", "Consolas", monospace;
+    font-size: 11px;
+    color: #1e293b;
+    selection-background-color: rgba(99,102,241,0.25);
+}
+
+/* ---------- Scrollbar ---------- */
+QScrollBar:vertical {
+    background: transparent;
+    width: 8px;
+    margin: 4px 2px;
+}
+QScrollBar::handle:vertical {
+    background: rgba(100,116,139,0.25);
+    border-radius: 4px;
+    min-height: 24px;
+}
+QScrollBar::handle:vertical:hover {
+    background: rgba(100,116,139,0.4);
+}
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical { height: 0; }
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical { background: transparent; }
+
+/* ---------- Buttons ---------- */
+QPushButton {
+    border-radius: 10px;
+    padding: 10px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+}
+QPushButton[class="primary"] {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+        stop:0 #4f46e5, stop:1 #7c3aed);
+    color: #ffffff;
+}
+QPushButton[class="primary"]:hover {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+        stop:0 #4338ca, stop:1 #6d28d9);
+}
+QPushButton[class="primary"]:pressed {
+    background: #3730a3;
+}
+
+QPushButton[class="secondary"] {
+    background: #f1f5f9;
+    color: #1e293b;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+}
+QPushButton[class="secondary"]:hover {
+    background: #e2e8f0;
+}
+
+QPushButton[class="ghost"] {
+    background: transparent;
+    color: #64748b;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 500;
+}
+QPushButton[class="ghost"]:hover { color: #0f172a; }
+
+/* ---------- Scroll area ---------- */
+QScrollArea { background: transparent; border: none; }
+QScrollArea > QWidget > QWidget { background: transparent; }
